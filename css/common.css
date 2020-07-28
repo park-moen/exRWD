@@ -214,7 +214,21 @@ legend,
 /* 공통 헤더 */
 .appHeader {
   background-color: silver;
+  display: grid;
 }
+/* 공통 브랜드 */
+.brand {
+}
+/* 공통 멤버 링크 */
+.memberOnly {
+  background-color: palegreen;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+.searchForm {
+}
+
 /* 공통 내비게이션 */
 .appNavigation {
   background-color: purple;
