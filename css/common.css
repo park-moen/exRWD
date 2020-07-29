@@ -213,7 +213,6 @@ legend,
 }
 /* 공통 헤더 */
 .appHeader {
-  background-color: silver;
   display: grid;
 }
 /* 공통 브랜드 */
@@ -221,12 +220,19 @@ legend,
 }
 /* 공통 멤버 링크 */
 .memberOnly {
-  background-color: palegreen;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
 }
-.searchForm {
+.memberOnly .divider {
+  margin: 0 5px;
+}
+/* 공통 검색 폼 */
+input[name="search"] {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 2px 5px;
+  height: 35px;
 }
 
 /* 공통 내비게이션 */
