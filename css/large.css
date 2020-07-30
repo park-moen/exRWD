@@ -75,16 +75,22 @@ fieldset {
 /* 데스크탑 메인  콘텐츠*/
 .appMain {
   display: grid;
-  grid-template: repeat(2, 25vh) / repeat(12, 1fr);
+  grid-template: auto / repeat(12, 1fr);
   /* grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 25vh 25vh; */
   gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 /* 데스크탑  추천서적*/
 .book {
   grid-area: 1 / 1 / 2 / span 4;
   /* grid-column: span 4;
   grid-row: span 2; */
+}
+.book__cover {
+  margin-left: 40px;
+  margin-right: 40px;
 }
 /* 데스크탑 새소식*/
 .news {
@@ -110,3 +116,39 @@ fieldset {
   /* grid-column: 5 / 10;
   grid-row: 2 / 3; */
 }
+
+/* .book__cover {
+  margin: 10px 40px;
+}
+.responsive {
+  display: block;
+  max-width: 100%;
+  max-height: auto;
+  margin-bottom: 20px;
+}
+[id*="__coverCaption"] {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.book__info {
+  text-align: center;
+}
+.book__info dt {
+  display: inline-block;
+}
+.book__info dd {
+  display: inline-block;
+  margin: 0;
+}
+.book__info dd:last-child {
+  display: block;
+  font-size: 2.5rem;
+}
+.book__summary {
+  margin: 0;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: justify;
+  line-height: 1.4;
+} */
