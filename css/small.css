@@ -166,4 +166,15 @@ input[type="search"] {
 .favorite__list a:focus::after {
   left: 10em;
 }
-/* 모바인 게시판 */
+/* 공통 트위터 */
+.twitter__userProfile {
+  text-align: right;
+}
+.appFooter {
+  line-height: 2;
+}
+.address span {
+  display: block;
+}
+.copyright {
+}

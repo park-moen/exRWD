@@ -285,7 +285,6 @@ legend,
 .appHeader {
   display: grid;
 }
-/* 공통 브랜드 */
 /* 공통 멤버 링크 */
 .memberOnly {
   display: flex;
@@ -296,7 +295,7 @@ legend,
   margin: 0 5px;
 }
 /* 공통 검색 폼 */
-input[name="search"] {
+input[type="search"] {
   border: 1px solid #aaa;
   border-radius: 5px;
   padding: 2px 5px;
@@ -314,12 +313,11 @@ input[name="search"] {
   display: block;
   margin-top: 5px;
 }
-/* 섹션 제목 사진 모듈 */
 .sprite {
-  background-image: url(./images/sprite_main.png);
-  background-repeat: no-repeat;
   min-height: 60px;
   padding-left: 65px;
+  background-image: url(./images/sprite_main.png);
+  background-repeat: no-repeat;
 }
 .spriteBook {
   background-position: 0 0;
@@ -383,8 +381,6 @@ input[name="search"] {
 video.responsive {
   width: 100%;
 }
-.news {
-}
 .news__videoContainer {
   margin: 15px 20px;
 }
@@ -399,11 +395,11 @@ video.responsive {
   height: 0 !important;
   position: relative;
 }
-.iframe16To9 {
-  padding-top: 56.25%;
-}
 .iframe4To3 {
   padding-top: 75%;
+}
+.iframe16To9 {
+  padding-top: 56.25%;
 }
 .iframe21To9 {
   padding-top: 42.857142857142855%;
@@ -418,10 +414,7 @@ video.responsive {
 /* 공통 게시판 */
 .board {
   position: relative;
-  /* width: 320px; 
-  grid의 column값을 1fr을 사용했기 때문에 white-space를 사용하면 계속해서 늘어나는 현상이 발생 >> 너비의 값을 고정해주는 방법과 overflow 트릭이 있다. */
   overflow: hidden;
-  /* 일어버린 원본 크기를 잃어드린다.(float에서 사용하는 방법을 응용한 방법) */
 }
 .board__list {
   margin: 15px 0;
@@ -431,13 +424,14 @@ video.responsive {
   margin: 10px 0;
   display: flex;
   flex-flow: row nowrap;
+  overflow: hidden;
 }
 .board__list a {
   white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
   flex-grow: 1;
-  margin: 0 5px;
+  margin: 0 10px 0 5px;
 }
 .board__more {
   position: absolute;
@@ -445,58 +439,102 @@ video.responsive {
   right: -10px;
   padding: 10px;
 }
+/* 공통 인기사이트 */
 .favorite__list {
   margin: 15px 0;
   padding-left: 20px;
-  /* counter-reset: number 0; */
 }
 .favorite__list li {
-  counter-increment: number 1;
+  counter-increment: number;
   margin: 10px 0;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
 }
 .favorite__list li::before {
   content: counter(number);
   color: #fff;
   background-color: #eea60a;
   padding: 2px 6px;
-  margin-right: 0.5em;
+  margin-right: 5px;
   border-radius: 50%;
 }
 .favorite__list a {
   position: relative;
   flex-grow: 1;
 }
-.favorite__list a:hover::after,
-.favorite__list a:focus::after {
+.favorite__list a:hover::before,
+.favorite__list a:focus::before {
   content: attr(data-tooltip);
   position: absolute;
-  background-color: #eea60a;
-  color: #fff;
   top: 1em;
+  background-color: #eea60a;
+  border: 1px solid #aaa;
   padding: 5px;
   z-index: 100;
-  border: 1px solid #aaa;
-  border-radius: 3px;
-  box-shadow: 2px 2px 0 #000;
-}
-/* .favorite__list a::after {
-  display: inline-block;
-  width: 145px;
-  height: 30px;
-  bottom: -20px;
-  right: 30px;
   color: #fff;
-  border-radius: 3px;
-  line-height: 30px;
-  padding-left: 20px;
-} */
+  box-shadow: 2px 2px 0 0 #000;
+}
+/* 공통 트위터*/
 .twitter {
-  background-color: maroon;
+  display: grid;
+  grid-template-columns: 1fr 20%;
+  column-gap: 20px;
+}
+.twitter__title {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.twitter__userInfo {
+  display: flex;
+  margin-left: 20px;
+}
+.twitter__userName,
+.twitter__userId {
+  margin: 0;
+}
+.twitter__userProfile {
+  grid-area: 2 / 2 / 4 / 3;
+  margin: 0;
+}
+.circlePhoto {
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  padding: 10px;
+}
+.twitter__summary {
+  margin-left: 20px;
+}
+.twitter__date {
+  margin: 1em 0;
+  text-align: right;
 }
 /* 공통 푸터 */
 .appFooter {
-  background-color: orange;
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(
+      #1d1d1d 25%,
+      #1a1a1a 25%,
+      #1a1a1a 50%,
+      transparent 50%,
+      transparent 75%,
+      #242424 75%,
+      #242424
+    );
+  background-color: #131313;
+  background-size: 20px 20px;
+  color: #fff;
+}
+.appFooter .address {
+  font-style: normal;
+  padding: 2em;
+  margin: 1em 0;
+}
+.copyright {
+  font-size: 1em;
+}
+.address,
+.copyright {
 }
