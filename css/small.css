@@ -161,3 +161,9 @@ input[type="search"] {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+/* 모바일 인기 사이트 */
+.favorite__list a:hover::after,
+.favorite__list a:focus::after {
+  left: 10em;
+}
+/* 모바인 게시판 */
