@@ -286,8 +286,6 @@ legend,
   display: grid;
 }
 /* 공통 브랜드 */
-.brand {
-}
 /* 공통 멤버 링크 */
 .memberOnly {
   display: flex;
@@ -381,8 +379,41 @@ input[name="search"] {
   font-size: 2.5rem;
   font-weight: 700;
 }
+/* 공통 새소식 */
+video.responsive {
+  width: 100%;
+}
 .news {
-  background-color: khaki;
+}
+.news__videoContainer {
+  margin: 15px 20px;
+}
+.news__date {
+  display: block;
+  text-align: right;
+  margin: 1em 0;
+}
+/* 공통 새소식 - iframe */
+.iframeContainer {
+  width: 100%;
+  height: 0 !important;
+  position: relative;
+}
+.iframe16To9 {
+  padding-top: 56.25%;
+}
+.iframe4To3 {
+  padding-top: 75%;
+}
+.iframe21To9 {
+  padding-top: 42.857142857142855%;
+}
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .board {
   background-color: lightblue;
